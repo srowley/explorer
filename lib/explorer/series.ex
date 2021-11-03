@@ -417,6 +417,25 @@ defmodule Explorer.Series do
     apply_impl(series, :get, [idx])
   end
 
+  @doc """
+  Concatenate series.
+
+  ## Examples
+
+      iex> s1 = Explorer.Series.from_list([1, 2, 3])
+      iex> s2 = Explorer.Series.from_list([4, 5, 6])
+      iex> Explorer.Series.concat(s1, s2)
+      #Explorer.Series<
+        integer[6]
+        [1, 2, 3, 4, 5, 6]
+      >
+  """
+  def concat(%Series{dtype: dtype} = s1, %Series{dtype: dtype} = s2),
+    do: apply_impl(s1, :concat, [s2])
+
+  def concat(%Series{dtype: dtype1}, %Series{dtype: dtype2}),
+    do: raise(ArgumentError, "dtypes must match, found #{dtype1} and #{dtype2}")
+
   # Aggregation
 
   @doc """
@@ -1493,7 +1512,7 @@ defmodule Explorer.Series do
 
   defp cast_numerics(list, type) when type == :numeric do
     data =
-      Enum.map(list, fn 
+      Enum.map(list, fn
         nil -> nil
         item -> item / 1
       end)
