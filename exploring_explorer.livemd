@@ -17,7 +17,7 @@ Connect to a `Mix` project with `Explorer` installed or:
 
 ```elixir
 Mix.install([
-  {:explorer, "~> 0.1.1"},
+  {:explorer, "~> 0.2.0"},
   {:kino, "~> 0.4.1"}
 ])
 ```
@@ -266,13 +266,13 @@ You can calculate cumulative values.
 
 ```elixir
 s = 1..100 |> Enum.to_list() |> Series.from_list()
-Series.cum_sum(s)
+Series.cumulative_sum(s)
 ```
 
 Or rolling ones.
 
 ```elixir
-Series.rolling_sum(s, 4)
+Series.window_sum(s, 4)
 ```
 
 You can count and list unique values.
@@ -445,7 +445,7 @@ DataFrame.rename(df, year: "year_test")
 ```
 
 ```elixir
-DataFrame.rename(df, &(&1 <> "_test"))
+DataFrame.rename_with(df, &(&1 <> "_test"))
 ```
 
 ### Dummies
@@ -537,7 +537,9 @@ tidy_names = fn name ->
   |> String.replace(" ", "_")
 end
 
-df |> DataFrame.pivot_wider("country", "total", id_columns: ["year"]) |> DataFrame.rename(tidy_names)
+df
+|> DataFrame.pivot_wider("country", "total", id_columns: ["year"])
+|> DataFrame.rename_with(tidy_names)
 ```
 
 ### Joins

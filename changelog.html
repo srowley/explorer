@@ -5,12 +5,12 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.28.3">
-    <meta name="project" content="Explorer v0.2.0-dev">
+    <meta name="project" content="Explorer v0.3.0-dev">
 
-    <title>Changelog — Explorer v0.2.0-dev</title>
+    <title>Changelog — Explorer v0.3.0-dev</title>
     <link rel="stylesheet" href="dist/elixir-d5ff82e6b0f5651c0ac0.css" />
 
-    <script src="dist/sidebar_items-1907890c7c.js"></script>
+    <script src="dist/sidebar_items-22ec6211b6.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -70,7 +70,7 @@
 Explorer
       </a>
       <strong class="sidebar-projectVersion" translate="no">
-        v0.2.0-dev
+        v0.3.0-dev
       </strong>
     </div>
     <ul class="sidebar-listNav">
@@ -97,7 +97,7 @@ Explorer
 </button>
 
 
-    <a href="https://github.com/elixir-nx/explorer/blob/v0.2.0-dev/CHANGELOG.md#L1" title="View Source" class="view-source" rel="help">
+    <a href="https://github.com/elixir-nx/explorer/blob/v0.3.0-dev/CHANGELOG.md#L1" title="View Source" class="view-source" rel="help">
       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
       <span class="sr-only">View Source</span>
     </a>
@@ -118,13 +118,32 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
   </a>
   Added
 </h3>
+<ul><li>Add <code class="inline">DataFrame.concat_columns/1</code> and <code class="inline">DataFrame.concat_columns/2</code> for horizontally stacking
+dataframes.</li></ul><h2 id="v0-2-0-2022-06-22" class="section-heading">
+  <a href="#v0-2-0-2022-06-22" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">v0-2-0-2022-06-22</p>
+  </a>
+  [v0.2.0] - 2022-06-22
+</h2>
+<h3 id="added-1" class="section-heading">
+  <a href="#added-1" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">added-1</p>
+  </a>
+  Added
+</h3>
 <ul><li>Consistently support ranges throughout the columns API</li><li>Support negative indexes throughout the columns API</li><li>Integrate with the <code class="inline">table</code> package</li><li>Add <code class="inline">Series.to_enum/1</code> for lazily traversing the series</li><li>Add <code class="inline">Series.coalesce/1</code> and <code class="inline">Series.coalesce/2</code> for finding the first non-null value in a list of series</li></ul><h3 id="changed" class="section-heading">
   <a href="#changed" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
   <p class="sr-only">changed</p>
   </a>
   Changed
 </h3>
-<ul><li><code class="inline">Series.length/1</code> is now <code class="inline">Series.size/1</code> in keeping with Elixir idioms</li><li><code class="inline">Nx</code> is now an optional dependency</li><li>Minimum Elixir version is now 1.13</li><li><code class="inline">DataFrame.to_map/2</code> is now <code class="inline">DataFrame.to_columns/2</code> and <code class="inline">DataFrame.to_series/2</code></li><li><a href="https://hexdocs.pm/rustler/0.25.0/Rustler.html"><code class="inline">Rustler</code></a> is now an optional dependency</li><li><code class="inline">read_</code> and <code class="inline">write_</code> IO functions are now <code class="inline">from_</code> and <code class="inline">to_</code></li><li><code class="inline">to_binary</code> is now <code class="inline">dump_csv</code></li><li>Now uses <code class="inline">polars</code>'s &quot;simd&quot; feature</li><li>Now uses <code class="inline">polars</code>'s &quot;performant&quot; feature</li><li><code class="inline">Explorer.default_backend/0</code> is now <a href="Explorer.Backend.html#get/0"><code class="inline">Explorer.Backend.get/0</code></a></li><li><code class="inline">Explorer.default_backend/1</code> is now <a href="Explorer.Backend.html#put/1"><code class="inline">Explorer.Backend.put/1</code></a></li><li><code class="inline">Series.cum_*</code> functions are now <code class="inline">Series.cumulative_*</code> to mirror <code class="inline">Nx</code></li><li><code class="inline">Series.rolling_*</code> functions are now <code class="inline">Series.window_*</code> to mirror <code class="inline">Nx</code></li><li><code class="inline">reverse?</code> is now an option instead of an argument in <code class="inline">Series.cumulative_*</code> functions</li><li><code class="inline">DataFrame.from_columns/2</code> and <code class="inline">DataFrame.from_rows/2</code> is now <code class="inline">DataFrame.new/2</code></li><li>Rename &quot;col&quot; to &quot;column&quot; throughout the API</li><li>Remove &quot;with_&quot; prefix in options throughout the API</li></ul><h2 id="v0-1-1-2022-04-27" class="section-heading">
+<ul><li><code class="inline">Series.length/1</code> is now <code class="inline">Series.size/1</code> in keeping with Elixir idioms</li><li><code class="inline">Nx</code> is now an optional dependency</li><li>Minimum Elixir version is now 1.13</li><li><code class="inline">DataFrame.to_map/2</code> is now <code class="inline">DataFrame.to_columns/2</code> and <code class="inline">DataFrame.to_series/2</code></li><li><a href="https://hexdocs.pm/rustler/0.25.0/Rustler.html"><code class="inline">Rustler</code></a> is now an optional dependency</li><li><code class="inline">read_</code> and <code class="inline">write_</code> IO functions are now <code class="inline">from_</code> and <code class="inline">to_</code></li><li><code class="inline">to_binary</code> is now <code class="inline">dump_csv</code></li><li>Now uses <code class="inline">polars</code>'s &quot;simd&quot; feature</li><li>Now uses <code class="inline">polars</code>'s &quot;performant&quot; feature</li><li><code class="inline">Explorer.default_backend/0</code> is now <a href="Explorer.Backend.html#get/0"><code class="inline">Explorer.Backend.get/0</code></a></li><li><code class="inline">Explorer.default_backend/1</code> is now <a href="Explorer.Backend.html#put/1"><code class="inline">Explorer.Backend.put/1</code></a></li><li><code class="inline">Series.cum_*</code> functions are now <code class="inline">Series.cumulative_*</code> to mirror <code class="inline">Nx</code></li><li><code class="inline">Series.rolling_*</code> functions are now <code class="inline">Series.window_*</code> to mirror <code class="inline">Nx</code></li><li><code class="inline">reverse?</code> is now an option instead of an argument in <code class="inline">Series.cumulative_*</code> functions</li><li><code class="inline">DataFrame.from_columns/2</code> and <code class="inline">DataFrame.from_rows/2</code> is now <code class="inline">DataFrame.new/2</code></li><li>Rename &quot;col&quot; to &quot;column&quot; throughout the API</li><li>Remove &quot;with_&quot; prefix in options throughout the API</li><li><code class="inline">DataFrame.table/2</code> accepts options with <code class="inline">:limit</code> instead of single integer</li><li><code class="inline">rename/2</code> no longer accepts a function, use <code class="inline">rename_with/2</code> instead</li><li><code class="inline">rename_with/3</code> now expects the function as the last argument</li></ul><h3 id="fixed" class="section-heading">
+  <a href="#fixed" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">fixed</p>
+  </a>
+  Fixed
+</h3>
+<ul><li>Explorer now works on Linux with musl</li></ul><h2 id="v0-1-1-2022-04-27" class="section-heading">
   <a href="#v0-1-1-2022-04-27" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
   <p class="sr-only">v0-1-1-2022-04-27</p>
   </a>
@@ -167,10 +186,10 @@ Ten Minutes to Explorer
             On Hex.pm:
 
             <span class="line">
-              <a href="https://hex.pm/packages/explorer/0.2.0-dev" class="line footer-hex-package">Package</a>
-              <a href="https://preview.hex.pm/preview/explorer/0.2.0-dev" class="line">Preview</a>
+              <a href="https://hex.pm/packages/explorer/0.3.0-dev" class="line footer-hex-package">Package</a>
+              <a href="https://preview.hex.pm/preview/explorer/0.3.0-dev" class="line">Preview</a>
 
-                <a href="https://preview.hex.pm/preview/explorer/0.2.0-dev/show/CHANGELOG.md">(current file)</a>
+                <a href="https://preview.hex.pm/preview/explorer/0.3.0-dev/show/CHANGELOG.md">(current file)</a>
 
             </span>
 
